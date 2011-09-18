@@ -149,8 +149,7 @@ deploy(){
 	echo "done"
 
 	echo -n "	> /etc/init.d/lipsyncd..."
-	cp etc/init.d/lipsyncd /etc/init.d
-	echo "done"
+	install -m 755 etc/init.d/lipsyncd /etc/init.d/
 
 	echo -n "	> Installing cron for user $username..."
 	newcronjob="* * * * *  /usr/local/bin/lipsync >/dev/null 2>&1"      #define entry for crontab	
